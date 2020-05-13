@@ -1,0 +1,585 @@
+@import url('https://fonts.googleapis.com/css?family=Cabin:400,500,600,700|Montserrat:600,700,800|Titillium+Web&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.disable-selection {
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer */
+  -khtml-user-select: none; /* KHTML browsers (e.g. Konqueror) */
+  -webkit-user-select: none; /* Chrome, Safari, and Opera */
+  -webkit-touch-callout: none; /* Disable Android and iOS callouts*/
+}
+
+body {
+  font-size: 100%;
+  font-family: 'Cabin', sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  color: #282828;
+  padding-top: 55px;
+  background: #fcfcfc;
+}
+
+@media (min-width: 768px) {
+  body {
+    padding-top: 75px;
+  }
+}
+
+/* ------------------ Heading Styles ---------------------- */
+.vcx.heading {
+  border-bottom: 1px solid #dddddd;
+  font-family: Montserrat, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  margin-bottom: 16px;
+}
+
+.vcx.heading i {
+  margin-right: 8px;
+}
+
+.vcx.heading span {
+  display: inline-block;
+  padding: 8px 0;
+  border-bottom: 1px solid #282828;
+  position: relative;
+  bottom: -1px;
+}
+
+/* ------------------ Button Styles ---------------------- */
+.vcx.button {
+  border-radius: 4px;
+  border: none;
+}
+
+.vcx.button i {
+  margin: 0 8px;
+}
+
+.vcx.button.block {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.vcx.button.orange {
+  color: #fff;
+  background: #ff6600;
+}
+
+.vcx.button.outline.black {
+  background: #fff;
+  border: 1px solid #282828;
+  color: #282828;
+}
+
+.vcx.button:disabled {
+  background: #8c919e;
+}
+
+/* ------------------ Input Styles ---------------------- */
+input.vcx[type='text'],
+input.vcx[type='password'] {
+  display: block;
+  width: 100%;
+  background: #fff;
+  border: 1px solid #dddddd;
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 4px;
+  padding: 12px;
+  outline: none;
+  font-size: 16px;
+}
+
+input.vcx[type='text'].error,
+input.vcx[type='password'].error {
+  border-color: #d11212;
+}
+
+input.vcx[type='text']:focus:not(.error),
+input.vcx[type='password']:focus:not(.error) {
+  border: 1px solid #00aeef;
+}
+
+/* ------------------ Select Styles ---------------------- */
+.vcx.select {
+  position: relative;
+}
+
+.vcx.select::after {
+  display: block;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  font-size: 12px;
+  content: '\f078';
+  color: #282828;
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.vcx.select select {
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  padding: 14px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  color: #282828;
+  font-size: 14px;
+  background: #fff;
+  outline: none;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* ------------------ Form Styles ---------------------- */
+form.vcx .groups {
+  display: flex;
+  align-items: flex-start;
+}
+
+form.vcx .groups .group {
+  flex-grow: 1;
+}
+
+form.vcx .groups .group:not(:last-of-type) {
+  margin-right: 12px;
+}
+
+form.vcx .group {
+  margin-bottom: 24px;
+}
+
+form.vcx .group label {
+  flex-grow: 1;
+  display: block;
+  font-size: 14px;
+  margin-right: 32px;
+}
+
+form.vcx .group > label {
+  margin-bottom: 8px;
+}
+
+form.vcx .group .error-message {
+  margin: 6px 0;
+  font-size: 14px;
+  color: #d11212;
+}
+
+/* ------------------ Header Styles ---------------------- */
+header {
+  height: 55px;
+  background: #fff;
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid #ebebeb;
+  box-shadow: 0 5px 24px rgba(0, 0, 0, 0.04);
+}
+
+#logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#logo a {
+  display: flex;
+  align-items: center;
+  color: #282828;
+  font: 16px 'Titillium Web', Cabin, sans-serif;
+}
+
+#logo i {
+  margin-right: 8px;
+}
+
+header nav .nav-trigger {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 5%;
+
+  color: #282828;
+  font-size: 22px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+header .auth-btns {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 5%;
+}
+
+header .auth-btns a {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 16px;
+  border-radius: 32px;
+}
+
+header .auth-btns .login {
+  display: none;
+}
+
+header .auth-btns .signup {
+  background: #ff6600;
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  header {
+    height: 75px;
+  }
+
+  #logo {
+    left: 5%;
+    transform: translate(0%, -50%);
+  }
+
+  #logo a {
+    font-size: 18px;
+  }
+
+  header nav .nav-trigger {
+    display: none;
+  }
+
+  header .auth-btns a {
+    font-size: 14px;
+    padding: 12px 20px;
+  }
+
+  header .auth-btns .login {
+    display: inline-block;
+    color: #ff6600;
+  }
+}
+
+/* ------------------ Cart Styles ---------------------- */
+#cart .trigger {
+  position: fixed;
+  right: 6%;
+  bottom: 32px;
+  height: 60px;
+  width: 60px;
+}
+
+#cart .trigger .count {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  z-index: 10;
+
+  height: 28px;
+  width: 28px;
+  line-height: 28px;
+  text-align: center;
+  background: #282828;
+  color: #fff;
+  border-radius: 50%;
+  font-family: Montserrat, Cabin, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+
+  transform: scale(1);
+  transition: transform 0.2s ease-in-out;
+}
+
+#cart .trigger button {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+#cart .trigger button::after {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  font-size: 18px;
+  content: '\f07a';
+  color: #282828;
+  cursor: pointer;
+}
+
+#cart .main {
+  transform-origin: right bottom;
+  transform: scale(0);
+  transition: transform 0.2s ease-in-out;
+
+  position: fixed;
+  z-index: 10;
+  right: calc(6% + 60px + 8px);
+  bottom: 32px;
+  width: calc(95vw - (6% + 60px + 8px));
+  max-width: 320px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  border-radius: 4px;
+}
+
+#cart .main .products-container {
+  max-height: 50vh;
+  overflow: auto;
+  margin-bottom: 16px;
+}
+
+#cart .main .product {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+#cart .main .product img {
+  flex-shrink: 0;
+  height: 70px;
+  width: 70px;
+  object-fit: cover;
+  object-position: center center;
+  margin-right: 8px;
+  border-radius: 4px;
+}
+
+#cart .main .product .content {
+  flex: 1;
+}
+
+#cart .main .product .name {
+  font-size: 12px;
+  line-height: 16px;
+  color: #767676;
+  margin-bottom: 4px;
+}
+
+#cart .main .product .price {
+  font-family: Montserrat, Cabin, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+#cart .main .product .actions {
+  display: flex;
+  align-items: center;
+}
+
+#cart .main .product .actions button {
+  border: none;
+  padding: 0;
+  background: transparent;
+  font-size: 12px;
+  outline: none;
+}
+
+#cart .main .product .actions span {
+  margin: 0 12px;
+  font-size: 14px;
+}
+
+#cart.open .trigger .count {
+  transform: scale(0);
+}
+
+#cart.open .trigger button::after {
+  content: '\f00d';
+}
+
+#cart.open .main {
+  transform: scale(1);
+}
+
+/* ------------------ Product List Styles ---------------------- */
+.product-tile .product {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 64px;
+}
+
+.product-tile .product .content {
+  flex: 1;
+}
+
+.product-tile .product img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  margin-bottom: 4px;
+}
+
+.product-tile .product .price-favorite {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.product-tile .product .price {
+  font-family: Montserrat, Cabin, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.product-tile .product .price-favorite button {
+  font-size: 20px;
+  color: #f8004c;
+  background: transparent;
+  outline: none;
+  border: none;
+  padding: 4px 8px;
+}
+
+.product-tile .product .name {
+  font-size: 14px;
+  line-height: 20px;
+  color: #767676;
+  margin-bottom: 8px;
+}
+
+.product-tile .product .add-to-cart {
+  margin-top: 32px;
+}
+
+@media (min-width: 540px) {
+  .product-tile .products {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .product-tile .product {
+    flex-basis: calc(50% - 8px);
+    max-width: calc(50% - 8px);
+  }
+
+  .product-tile .product:nth-child(2n + 1) {
+    margin-right: 16px;
+  }
+}
+
+@media (min-width: 768px) {
+  .product-tile .product {
+    flex-basis: calc((100% / 3) - (32px / 3));
+    max-width: calc((100% / 3) - (32px / 3));
+  }
+
+  .product-tile .product:nth-child(3n + 3) {
+    margin-right: 0;
+  }
+
+  .product-tile .product:not(:nth-child(3n + 3)) {
+    margin-right: 16px;
+  }
+
+  .product-tile .product img {
+    height: 240px;
+  }
+}
+
+/* ------------------ Home Page Styles ---------------------- */
+#home-page .main-container {
+  padding: 32px 16px;
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+/* ------------------ Auth Page Styles ---------------------- */
+#auth-page .form-container {
+  padding: 32px 16px;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+#auth-page form {
+  padding: 8px 0;
+}
+
+#auth-page form button[type='submit'] {
+  margin-top: 48px;
+}
+
+#auth-page form .group .password {
+  position: relative;
+}
+
+#auth-page form .group .password button {
+  padding: 8px 16px;
+  font-size: 20px;
+  color: #767676;
+  border: none;
+  background: transparent;
+  position: absolute;
+  top: 50%;
+  outline: none;
+  right: 0;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
