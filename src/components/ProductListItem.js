@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addToCart } from '../actions';
+import { addOneToCart } from '../actions';
 
-function ProductListItem({ product, addToCart }) {
+function ProductListItem({ product, addOneToCart }) {
   function addProductToCart(e) {
     e.preventDefault();
-    addToCart(product.id);
+    addOneToCart(product.id);
   }
 
   return (
@@ -33,4 +33,4 @@ function ProductListItem({ product, addToCart }) {
   );
 }
 
-export default connect(null, { addToCart })(ProductListItem);
+export default connect(null, { addOneToCart })(ProductListItem);

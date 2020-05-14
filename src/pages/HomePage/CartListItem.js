@@ -1,16 +1,31 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addToCart, removeFromCart } from '../../actions';
+import {
+  addOneToCart,
+  removeAllFromCart,
+  removeOneFromCart,
+} from '../../actions';
 
-function CartListItem({ product, count, addToCart, removeFromCart }) {
+function CartListItem({
+  product,
+  count,
+  addOneToCart,
+  removeAllFromCart,
+  removeOneFromCart,
+}) {
   function addProductToCart(e) {
     e.preventDefault();
-    addToCart(product.id);
+    addOneToCart(product.id);
   }
 
-  function removeProductFromCart(e) {
+  function removeOneOfProductFromCart(e) {
     e.preventDefault();
-    removeFromCart(product.id);
+    removeOneFromCart(product.id);
+  }
+
+  function removeAllOfProductFromCart(e) {
+    e.preventDefault();
+    removeAllFromCart(product.id);
   }
 
   return (
@@ -20,12 +35,15 @@ function CartListItem({ product, count, addToCart, removeFromCart }) {
         <p className="name">{product.name}</p>
         <p className="price">¢ {product.price}</p>
         <div className="actions">
-          <button onClick={removeProductFromCart}>
+          <button onClick={removeOneOfProductFromCart}>
             <i className="fas fa-minus"></i>
           </button>
           <span>{count}</span>
           <button onClick={addProductToCart}>
             <i className="fas fa-plus"></i>
+          </button>
+          <button className="delete" onClick={removeAllOfProductFromCart}>
+            <i className="fas fa-times"></i>
           </button>
         </div>
       </div>
@@ -37,6 +55,8 @@ function mapStateToProps({ products }, ownProps) {
   return { product: products[ownProps.id] };
 }
 
-export default connect(mapStateToProps, { addToCart, removeFromCart })(
-  CartListItem
-);
+export default connect(mapStateToProps, {
+  addOneToCart,
+  removeAllFromCart,
+  removeOneFromCart,
+})(CartListItem);

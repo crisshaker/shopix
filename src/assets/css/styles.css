@@ -441,9 +441,16 @@ header .auth-btns .signup {
   outline: none;
 }
 
+#cart .main .product .actions button.delete {
+  margin-left: auto;
+  color: #f61d00;
+}
+
 #cart .main .product .actions span {
-  margin: 0 12px;
+  margin: 0 4px;
+  width: 30px;
   font-size: 14px;
+  text-align: center;
 }
 
 #cart.open .trigger .count {
@@ -490,7 +497,7 @@ header .auth-btns .signup {
 }
 
 .product-tile .product .price-favorite button {
-  font-size: 20px;
+  font-size: 16px;
   color: #f8004c;
   background: transparent;
   outline: none;

@@ -11,7 +11,10 @@ function Cart({ count, cart, total }) {
     setOpen(!open);
   }
 
-  if (count === 0) return null;
+  if (count === 0) {
+    open && setOpen(false);
+    return null;
+  }
 
   return (
     <div
